@@ -19,7 +19,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MyRetailApplication.class)
@@ -43,10 +42,7 @@ public class MyRetailDBTests {
 		productRepository.save(Arrays.asList(product1, product2, product3));
 	}
 
-
-
 	@Test
-	@Transactional
 	public void saveProduct() {
 		Product product4 = new Product(8888, "ZZZ123", "Pokemon Cards", "toys");
 		productRepository.save(product4);

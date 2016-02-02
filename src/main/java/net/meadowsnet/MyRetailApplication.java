@@ -16,7 +16,6 @@ public class MyRetailApplication {
 		RepositoryRestConfiguration restConfiguration = ctx.getBean(RepositoryRestConfiguration.class);
 		restConfiguration.setDefaultMediaType(MediaType.APPLICATION_JSON);
 
-
 	}
 
 }

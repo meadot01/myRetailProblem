@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by todd on 1/29/16.
+ * The following is a rest controller for Product.  Only read operations
+ * are needed.
+ *
+ * Created by Todd Meadows on 1/29/16.
  */
 @RestController
 public class ProductController {
@@ -23,6 +25,13 @@ public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
+    /*
+    Request mapping to get all products.
+    Example: /products will return all products.
+    You can also pass a parameter of ids containing a comma separated list
+    of ids to return specific products.
+    Example: /products?ids=5555,5556 will return only products with id 5555 and 5556
+     */
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public Iterable<Product> getProducts(@RequestParam(value="ids", required=false) String ids) {
         if (!StringUtils.isEmpty(ids)) {
@@ -37,6 +46,11 @@ public class ProductController {
     }
 
 
+    /*
+    Request mapping to return a product for a specific product id.
+    Example: /product/5555 will return product with id 5555.
+    If the product does not exist a status of 404 will be returned.
+     */
     @RequestMapping(value = "/product/{productId}", method = RequestMethod.GET)
     public ResponseEntity<Product> getProduct(@PathVariable Long productId) {
         Product product = null;
@@ -48,9 +62,13 @@ public class ProductController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        //return product;
     }
 
+    /*
+    Request mapping to retrieve all products for a specified category name.
+    Example : /category/toys/products will return all products with a
+    toys category
+     */
     @RequestMapping(value = "/category/{categoryName}/products", method = RequestMethod.GET)
     public Iterable<Product> getProductsByCategory(@PathVariable String categoryName) {
         return productRepository.findProductByCategory(categoryName);

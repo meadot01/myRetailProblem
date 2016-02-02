@@ -94,8 +94,6 @@ public class MyRetailRestTests {
         assertTrue(compareArrays(expectedResults, returnedProducts));
     }
 
-
-
     // Does an order insensitive compare of two Product Arrays
     private boolean compareArrays(Product[] products1, Product[] products2) {
         List<Product> productArray1 = new LinkedList<Product>(Arrays.asList(products1));

@@ -6,7 +6,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 /**
- * Created by todd on 1/30/16.
+ * Created by Todd Meadows on 1/30/16.
  *
  * Since could not get AuditingEntityListener working am creating custom
  * listener.  Normally would not do this for simple case like this.

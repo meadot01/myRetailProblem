@@ -13,7 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * Created by todd on 1/19/16.
+ * Created by Todd Meadows on 1/19/16.
  */
 @Entity
 //@EntityListeners({AuditingEntityListener.class})
