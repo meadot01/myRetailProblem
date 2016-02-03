@@ -27,8 +27,6 @@ public class MyRetailDBTests {
 
 	@Autowired
 	ProductRepository productRepository;
-	@Autowired
-	ApplicationContext ctx;
 
 	Product product1, product2, product3;
 

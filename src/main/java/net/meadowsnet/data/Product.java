@@ -1,6 +1,7 @@
 package net.meadowsnet.data;
 
-import org.springframework.data.annotation.CreatedDate;
+import net.meadowsnet.TimestampedEntityAuditListener;
+
 import org.springframework.data.annotation.LastModifiedDate;
 
 

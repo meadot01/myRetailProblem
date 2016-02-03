@@ -1,4 +1,6 @@
-package net.meadowsnet.data;
+package net.meadowsnet;
+
+import net.meadowsnet.data.Product;
 
 import java.util.Date;
 
